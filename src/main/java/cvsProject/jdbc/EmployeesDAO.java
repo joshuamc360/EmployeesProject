@@ -17,20 +17,6 @@ public class EmployeesDAO {
         }
     }
 
-    //create a separate method to print out results.
-    public void printRecords(){
-        try{
-            ResultSet resultSet = statement.executeQuery(SQLQueries.SELECT_ALL_FROM_DB);
-            while (resultSet.next()) {
-                System.out.println(resultSet.getInt(1));
-                System.out.println(resultSet.getString(2));
-                System.out.println(resultSet.getString(3));
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-    }
-
     public void createRecord(int id, String namePrefix, String fName, String middleInitial, String lastName, String gender, String email, String dateOfBirth, String dateOfJoining, String salary){
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.INSERT_INTO_DB);
