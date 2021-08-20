@@ -17,8 +17,6 @@ public class EmployeesDAO {
         }
     }
 
-
-
     //create a separate method to print out results.
     public void printRecords(){
         try{
@@ -33,7 +31,6 @@ public class EmployeesDAO {
         }
     }
 
-    //INSERT INTO `user_db`.`employees` (`EmployeeID`, `NamePrefix`, `FirstName`, `MiddleInitial`, `LastName`, `Gender`, `Email`, `DateOfBirth`, `DateOfJoining`, `Salary`
     public void createRecord(int id, String namePrefix, String fName, String middleInitial, String lastName, String gender, String email, String dateOfBirth, String dateOfJoining, String salary){
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.INSERT_INTO_DB);
